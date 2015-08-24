@@ -2,14 +2,42 @@
 
 namespace YPStorageEngine;
 
+/**
+ * Interface for storage adapters
+ *
+ * Interface IClient
+ * @package YPStorageEngine
+ */
 interface IClient {
 
-    public function fetchOne($criteria);
+    /**
+     * @param $domain Table name or file name or other domain are where to look for data
+     * @param $criteria
+     * @return mixed
+     */
+    public function fetchOne($domain, $criteria);
 
-    public function update($criteria, $fields);
+    /**
+     * @param $domain Table name or file name or other domain are where to save
+     * @param $criteria
+     * @param $fields
+     * @return mixed
+     */
+    public function update($domain, $criteria, $fields);
 
-    public function insert($fields);
+    /**
+     * @param $domain Table name or file name or other domain are where to look for and update data
+     * @param $fields
+     * @return mixed
+     */
+    public function insert($domain, $fields);
 
-    public function upsert($criteria, $fields);
+    /**
+     * @param $domain Table name or file name or other domain are where to insert data
+     * @param $criteria
+     * @param $fields
+     * @return mixed
+     */
+    public function upsert($domain, $criteria, $fields);
 
 }
