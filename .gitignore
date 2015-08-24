@@ -1,4 +1,5 @@
 vendor
+tests/coverage-report/*
 composer.phar
 phpunit.xml
 composer.lock
