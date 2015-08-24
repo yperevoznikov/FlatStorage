@@ -8,4 +8,9 @@ class ClientBlackhole implements IClient {
 
 	}
 
+    public function fetchOne($criteria)
+    {
+        return null;
+    }
+
 }

@@ -4,6 +4,9 @@ use \YStorageEngine;
 
 class ClientBlackholeTest extends \PHPUnit_Framework_TestCase {
 
+    /**
+     * @var \YStorageEngine\ClientBlackhole
+     */
 	private $clientBlackhole;
 
 	public function setUp() {
@@ -20,5 +23,9 @@ class ClientBlackholeTest extends \PHPUnit_Framework_TestCase {
 		$this->assertInstanceOf('\YStorageEngine\IClient', $clientBlackhole);
 
 	}
+
+    public function testFetchOne(){
+        $this->assertNull($this->clientBlackhole->fetchOne(array()));
+    }
 
 }
