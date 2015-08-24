@@ -1,12 +1,22 @@
 <?php
 
-namespace YStorageEngine;
+namespace YPStorageEngine;
 
 class ClientBlackhole implements IClient {
 	
 	public function __construct() {
 
 	}
+
+    public function insert($fields)
+    {
+
+    }
+
+    public function upsert($criteria, $fields)
+    {
+
+    }
 
     public function fetchOne($criteria)
     {

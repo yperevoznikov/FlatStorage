@@ -1,6 +1,6 @@
 <?php
 
-namespace YStorageEngine;
+namespace YPStorageEngine;
 
 class Slot {
 
