@@ -2,6 +2,10 @@
 
 namespace YPStorageEngine;
 
+/**
+ * Class ClientBlackholeTest
+ * @package YPStorageEngine
+ */
 class ClientBlackholeTest extends \PHPUnit_Framework_TestCase {
 
     /**
@@ -9,7 +13,10 @@ class ClientBlackholeTest extends \PHPUnit_Framework_TestCase {
      */
 	private $clientBlackhole;
 
-	public function setUp() {
+    /**
+     *  Prepare each test with pure fixture
+     */
+    public function setUp() {
 		$this->clientBlackhole = new ClientBlackhole();
 	}
 
@@ -19,24 +26,36 @@ class ClientBlackholeTest extends \PHPUnit_Framework_TestCase {
 	public function testConstructor() {
 		
 		$clientBlackhole = new ClientBlackhole();
-		$this->assertInstanceOf('\YStorageEngine\IClient', $clientBlackhole);
+		$this->assertInstanceOf('\YPStorageEngine\IClient', $clientBlackhole);
 
 	}
 
+    /**
+     *  @covers \YPStorageEngine\ClientBlackhole::fetchOne
+     */
     public function testFetchOne(){
-        $this->assertNull($this->clientBlackhole->fetchOne(array()));
+        $this->assertNull($this->clientBlackhole->fetchOne('domain-name', array()));
     }
 
+    /**
+     *  @covers \YPStorageEngine\ClientBlackhole::insert
+     */
     public function testInsert(){
-        $this->clientBlackhole->insert(array());
+        $this->clientBlackhole->insert('domain-name', array());
     }
 
+    /**
+     *  @covers \YPStorageEngine\ClientBlackhole::upsert
+     */
     public function testUpsert(){
-        $this->clientBlackhole->upsert(array(), array());
+        $this->clientBlackhole->upsert('domain-name', array(), array());
     }
 
+    /**
+     *  @covers \YPStorageEngine\ClientBlackhole::update
+     */
     public function testUpdate(){
-        $this->clientBlackhole->update(array(), array());
+        $this->clientBlackhole->update('domain-name', array(), array());
     }
 
 }
