@@ -22,6 +22,9 @@ class Slot {
 
     public function matchCriteria($criteria){
         foreach ($criteria as $name => $value) {
+            if (!isset($value) && !isset($this->data[$name])) {
+                continue;
+            }
             if (!isset($this->data[$name]) || $this->data[$name] != $value) {
                 return false;
             }

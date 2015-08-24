@@ -31,6 +31,7 @@ class SlotTest extends \PHPUnit_Framework_TestCase {
             array(array('f1'=>'v1'), array('f1'=>'v2'), false),
             array(array('f1'=>'v1'), array('m'=>'n', 'f1'=>'v1'), false),
             array(array('m'=>'n', 'f1'=>'v1'), array('f1'=>'v1'), true),
+            array(array('m'=>'n', 'f1'=>null), array('f1'=>null), true),
         );
     }
 
