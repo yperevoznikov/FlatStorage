@@ -10,6 +10,12 @@ namespace YPStorageEngine;
  */
 class ClientKohanaDb implements IClient {
 
+    // Query types
+    const SELECT =  1;
+    const INSERT =  2;
+    const UPDATE =  3;
+    const DELETE =  4;
+
     /**
      * @var array
      */
@@ -42,7 +48,7 @@ class ClientKohanaDb implements IClient {
         $values = implode(',', $valuesArr);
 
         $sql = "INSERT INTO `$table` (" . $names . ") VALUES (" . $values . ")";
-        $this->db->query(Database::INSERT, $sql);
+        $this->db->query(self::INSERT, $sql);
     }
 
     /**
@@ -74,7 +80,7 @@ class ClientKohanaDb implements IClient {
         }
 
         $sql = "SELECT * FROM `$table` WHERE " . implode(' AND ', $whereStatements) . " LIMIT 1";
-        $res = $this->db->query(Database::SELECT, $sql);
+        $res = $this->db->query(self::SELECT, $sql);
 
         if (!is_object($res)) {
             return null;
@@ -104,7 +110,7 @@ class ClientKohanaDb implements IClient {
         }
 
         $sql = "UPDATE `$table` SET " . implode(' AND ', $setStatements) . " WHERE " . implode(' AND ', $whereStatements);
-        $this->db->query(Database::UPDATE, $sql);
+        $this->db->query(self::UPDATE, $sql);
     }
 
 }
