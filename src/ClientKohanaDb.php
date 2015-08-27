@@ -109,7 +109,7 @@ class ClientKohanaDb implements IClient {
             $setStatements[] = "$name = '$field'";
         }
 
-        $sql = "UPDATE `$table` SET " . implode(' AND ', $setStatements) . " WHERE " . implode(' AND ', $whereStatements);
+        $sql = "UPDATE `$table` SET " . implode(', ', $setStatements) . " WHERE " . implode(' AND ', $whereStatements);
         $this->db->query(self::UPDATE, $sql);
     }
 

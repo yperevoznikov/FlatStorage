@@ -97,10 +97,10 @@ class ClientKohanaDbTest extends \PHPUnit_Framework_TestCase {
     public function testUpdate(){
         // prepare input and expected
         $inputDomain = 'domain';
-        $inputCriteria = array('f2' => 'v2');
-        $inputFields = array('f1' => 'v1');
+        $inputCriteria = array('f2' => 'v2', 'f3' => 'v3');
+        $inputFields = array('f1' => 'v1', 'f4' => 'v4');
         $expectedOperation = Database::UPDATE;
-        $expectedSql = "UPDATE `domain` SET f1 = 'v1' WHERE f2 = 'v2'";
+        $expectedSql = "UPDATE `domain` SET f1 = 'v1', f4 = 'v4' WHERE f2 = 'v2' AND f3 = 'v3'";
 
         // prepare mock object with condition
         $dbMock = $this->getDbMockWithQueryAndAsArrayMethods($expectedOperation, $expectedSql);
