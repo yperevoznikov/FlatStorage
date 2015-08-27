@@ -60,7 +60,9 @@ class ClientKohanaDbTest extends \PHPUnit_Framework_TestCase {
 
         // execute code
         $clientKohanaDb = new ClientKohanaDb($dbMock);
-        $clientKohanaDb->fetchOne($inputDomain, $inputFields);
+        $result = $clientKohanaDb->fetchOne($inputDomain, $inputFields);
+
+        $this->assertInstanceOf('YPStorageEngine\Slot', $result);
     }
 
     /**

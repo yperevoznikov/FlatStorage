@@ -87,7 +87,7 @@ class ClientKohanaDb implements IClient {
         }
         $resArray = $res->as_array();
 
-        return count($resArray) > 0 ? $resArray[0] : null;
+        return count($resArray) > 0 ? new Slot($resArray[0]) : null;
     }
 
     /**
