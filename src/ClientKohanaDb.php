@@ -43,7 +43,7 @@ class ClientKohanaDb implements IClient {
 
         $valuesArr = array();
         foreach ($fields as $field) {
-            $valuesArr[] = "'$field'";
+            $valuesArr[] = "'" . str_replace("'", "\\'", $field) . "'";
         }
         $values = implode(',', $valuesArr);
 
@@ -76,7 +76,7 @@ class ClientKohanaDb implements IClient {
     {
         $whereStatements = array();
         foreach ($criteria as $name => $field) {
-            $whereStatements[] = "$name = '$field'";
+            $whereStatements[] = "$name = '" . str_replace("'", "\\'", $field) . "'";
         }
 
         $sql = "SELECT * FROM `$table` WHERE " . implode(' AND ', $whereStatements) . " LIMIT 1";
@@ -106,7 +106,7 @@ class ClientKohanaDb implements IClient {
 
         $setStatements = array();
         foreach ($fields as $name => $field) {
-            $setStatements[] = "$name = '$field'";
+            $setStatements[] = "$name = '" . str_replace("'", "\\'", $field) . "'";
         }
 
         $sql = "UPDATE `$table` SET " . implode(', ', $setStatements) . " WHERE " . implode(' AND ', $whereStatements);
