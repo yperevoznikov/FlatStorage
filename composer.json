@@ -2,7 +2,7 @@
     "name": "yperevoznikov/flat-storage",
     "description": "Storage engine to store different things",
     "type": "library",
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "Yuriy Perevoznikov",
