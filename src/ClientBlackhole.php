@@ -1,6 +1,6 @@
 <?php
 
-namespace YPStorageEngine;
+namespace YPFlatStorage;
 
 class ClientBlackhole implements IClient {
 	

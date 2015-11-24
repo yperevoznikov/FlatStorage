@@ -1,15 +1,15 @@
 <?php
 
-namespace YPStorageEngine;
+namespace YPFlatStorage;
 
 /**
  * Class ClientBlackholeTest
- * @package YPStorageEngine
+ * @package YPFlatStorage
  */
 class ClientBlackholeTest extends \PHPUnit_Framework_TestCase {
 
     /**
-     * @var \YPStorageEngine\ClientBlackhole
+     * @var \YPFlatStorage\ClientBlackhole
      */
 	private $clientBlackhole;
 
@@ -21,38 +21,38 @@ class ClientBlackholeTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * 	@covers \YPStorageEngine\ClientBlackhole::__construct
+	 * 	@covers \YPFlatStorage\ClientBlackhole::__construct
 	 */
 	public function testConstructor() {
 		
 		$clientBlackhole = new ClientBlackhole();
-		$this->assertInstanceOf('\YPStorageEngine\IClient', $clientBlackhole);
+		$this->assertInstanceOf('\YPFlatStorage\IClient', $clientBlackhole);
 
 	}
 
     /**
-     *  @covers \YPStorageEngine\ClientBlackhole::fetchOne
+     *  @covers \YPFlatStorage\ClientBlackhole::fetchOne
      */
     public function testFetchOne(){
         $this->assertNull($this->clientBlackhole->fetchOne('domain-name', array()));
     }
 
     /**
-     *  @covers \YPStorageEngine\ClientBlackhole::insert
+     *  @covers \YPFlatStorage\ClientBlackhole::insert
      */
     public function testInsert(){
         $this->clientBlackhole->insert('domain-name', array());
     }
 
     /**
-     *  @covers \YPStorageEngine\ClientBlackhole::upsert
+     *  @covers \YPFlatStorage\ClientBlackhole::upsert
      */
     public function testUpsert(){
         $this->clientBlackhole->upsert('domain-name', array(), array());
     }
 
     /**
-     *  @covers \YPStorageEngine\ClientBlackhole::update
+     *  @covers \YPFlatStorage\ClientBlackhole::update
      */
     public function testUpdate(){
         $this->clientBlackhole->update('domain-name', array(), array());

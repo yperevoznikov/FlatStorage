@@ -1,6 +1,6 @@
 <?php
 
-namespace YPStorageEngine;
+namespace YPFlatStorage;
 
 class Database {
 
@@ -23,7 +23,7 @@ class Database {
 class ClientKohanaDbTest extends \PHPUnit_Framework_TestCase {
 
     /**
-     * @var \YPStorageEngine\ClientKohanaDb
+     * @var \YPFlatStorage\ClientKohanaDb
      */
     private $clientKohanaDb;
 
@@ -35,17 +35,17 @@ class ClientKohanaDbTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     * 	@covers \YPStorageEngine\ClientKohanaDb::__construct
+     * 	@covers \YPFlatStorage\ClientKohanaDb::__construct
      */
     public function testConstructor() {
 
         $clientKohanaDb = new ClientKohanaDb(new Database());
-        $this->assertInstanceOf('\YPStorageEngine\IClient', $clientKohanaDb);
+        $this->assertInstanceOf('\YPFlatStorage\IClient', $clientKohanaDb);
 
     }
 
     /**
-     *  @covers \YPStorageEngine\ClientKohanaDb::fetchOne
+     *  @covers \YPFlatStorage\ClientKohanaDb::fetchOne
      */
     public function testFetchOne(){
 
@@ -62,11 +62,11 @@ class ClientKohanaDbTest extends \PHPUnit_Framework_TestCase {
         $clientKohanaDb = new ClientKohanaDb($dbMock);
         $result = $clientKohanaDb->fetchOne($inputDomain, $inputFields);
 
-        $this->assertInstanceOf('YPStorageEngine\Slot', $result);
+        $this->assertInstanceOf('YPFlatStorage\Slot', $result);
     }
 
     /**
-     *  @covers \YPStorageEngine\ClientKohanaDb::insert
+     *  @covers \YPFlatStorage\ClientKohanaDb::insert
      */
     public function testInsert(){
 
@@ -85,14 +85,14 @@ class ClientKohanaDbTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     *  @covers \YPStorageEngine\ClientKohanaDb::upsert
+     *  @covers \YPFlatStorage\ClientKohanaDb::upsert
      */
     public function testUpsert(){
         $this->clientKohanaDb->upsert('domain', array('f1' => 'v1'), array('f2' => 'v2'));
     }
 
     /**
-     *  @covers \YPStorageEngine\ClientKohanaDb::update
+     *  @covers \YPFlatStorage\ClientKohanaDb::update
      */
     public function testUpdate(){
         // prepare input and expected

@@ -1,12 +1,12 @@
 <?php
 
-namespace YPStorageEngine;
+namespace YPFlatStorage;
 
 /**
  * Interface for storage adapters
  *
  * Interface IClient
- * @package YPStorageEngine
+ * @package YPFlatStorage
  */
 interface IClient {
 

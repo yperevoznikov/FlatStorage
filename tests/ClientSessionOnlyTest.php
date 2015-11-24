@@ -1,11 +1,11 @@
 <?php
 
-namespace YPStorageEngine;
+namespace YPFlatStorage;
 
 class ClientSessionOnlyTest extends \PHPUnit_Framework_TestCase {
 
     /**
-     * @var \YPStorageEngine\ClientSessionOnly
+     * @var \YPFlatStorage\ClientSessionOnly
      */
     private $client;
 
@@ -17,19 +17,19 @@ class ClientSessionOnlyTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     * 	@covers \YPStorageEngine\ClientSessionOnly::__construct
+     * 	@covers \YPFlatStorage\ClientSessionOnly::__construct
      */
     public function testConstructor() {
 
         $client = new ClientSessionOnly();
-        $this->assertInstanceOf('\YPStorageEngine\IClient', $client);
+        $this->assertInstanceOf('\YPFlatStorage\IClient', $client);
 
     }
 
     /**
-     *  @covers \YPStorageEngine\ClientSessionOnly::fetchOne
-     *  @covers \YPStorageEngine\ClientSessionOnly::insert
-     *  @covers \YPStorageEngine\ClientSessionOnly::upsertDomain
+     *  @covers \YPFlatStorage\ClientSessionOnly::fetchOne
+     *  @covers \YPFlatStorage\ClientSessionOnly::insert
+     *  @covers \YPFlatStorage\ClientSessionOnly::upsertDomain
      */
     public function testFetchOne(){
 
@@ -46,7 +46,7 @@ class ClientSessionOnlyTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     *  @covers \YPStorageEngine\ClientSessionOnly::upsert
+     *  @covers \YPFlatStorage\ClientSessionOnly::upsert
      */
     public function testUpsert(){
 
@@ -65,7 +65,7 @@ class ClientSessionOnlyTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     *  @covers \YPStorageEngine\ClientSessionOnly::update
+     *  @covers \YPFlatStorage\ClientSessionOnly::update
      */
     public function testUpdate(){
 

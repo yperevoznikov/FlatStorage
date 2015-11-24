@@ -1,11 +1,11 @@
 <?php
 
-namespace YPStorageEngine;
+namespace YPFlatStorage;
 
 class SlotTest extends \PHPUnit_Framework_TestCase {
 
     /**
-     * @var \YPStorageEngine\Slot
+     * @var \YPFlatStorage\Slot
      */
     private $slot;
 

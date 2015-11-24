@@ -1,12 +1,12 @@
 <?php
 
-namespace YPStorageEngine;
+namespace YPFlatStorage;
 
 /**
  * This storage client is not efficient and shouldn't be used for production, only for testing purposes
  *
  * Class ClientSessionOnly
- * @package YPStorageEngine
+ * @package YPFlatStorage
  */
 class ClientKohanaDb implements IClient {
 

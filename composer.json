@@ -1,5 +1,5 @@
 {
-    "name": "yperevoznikov/storage-engine",
+    "name": "yperevoznikov/flat-storage",
     "description": "Storage engine to store different things",
     "type": "library",
     "license": "proprietary",
@@ -15,9 +15,9 @@
         "phpunit/phpunit": "~4.5"
     },
     "autoload": {
-        "psr-4": {"YPStorageEngine\\": "src"}
+        "psr-4": {"YPFlatStorage\\": "src"}
     },
     "autoload-dev": {
-        "psr-4": {"YPStorageEngine\\": "tests"}
+        "psr-4": {"YPFlatStorage\\": "tests"}
     }
 }
